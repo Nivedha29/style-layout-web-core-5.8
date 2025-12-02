@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CPS – Services and support</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page page--theme--light">
+    <div class="page__main-container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header__group">
+          <button
+            class="header__icon header__icon--type--burger"
+            aria-label="Open menu"
+          >
+            <img src="img/Burger Icon.png" alt="" />
+          </button>
+
+          <div class="header__group-divider"></div>
+
+          <img
+            class="header__logo"
+            src="img/Logo Group.png"
+            alt="CPS logo"
+          />
+        </div>
+
+        <div class="header__actions">
+          <!-- hidden on mobile by CSS -->
+          <button
+            class="header__icon header__icon--type--call"
+            aria-label="Call"
+          >
+            <img src="img/Call Icon.png" alt="" />
+          </button>
+          <button
+            class="header__icon header__icon--type--chat"
+            aria-label="Chat"
+          >
+            <img src="img/Chat Icon.png" alt="" />
+          </button>
+          <button
+            class="header__icon header__icon--type--profile"
+            aria-label="Profile"
+          >
+            <img src="img/Profile Icon.png" alt="" />
+          </button>
+
+          <div class="header__actions-divider"></div>
+
+          <!-- visible on all sizes -->
+          <button
+            class="header__icon header__icon--type--repair"
+            aria-label="Repair"
+          >
+            <img src="img/Repair Icon.png" alt="" />
+          </button>
+          <button
+            class="header__icon header__icon--type--check-status"
+            aria-label="Check status"
+          >
+            <img src="img/Check Status Icon.png" alt="" />
+          </button>
+        </div>
+      </header>
+
+      <!-- MAIN SERVICES SECTION -->
+      <main class="services">
+        <section class="services__card">
+          <div class="services__header-row">
+            <div class="services__header">
+              <span class="services__accent-bar"></span>
+              <h1 class="services__title">Services and support</h1>
+            </div>
+
+            <div class="services__actions">
+              <button
+                class="services__action services__action--type--submit-request"
+                type="button"
+              >
+                Submit a request
+              </button>
+              <button
+                class="services__action services__action--type--check-status"
+                type="button"
+              >
+                Repair status
+              </button>
+            </div>
+          </div>
+
+          <!-- TABS -->
+          <nav class="tabs" aria-label="Services navigation">
+            <ul class="tabs__list">
+              <li class="tabs__item tabs__item--state--active">
+                Brands we repair
+              </li>
+              <li class="tabs__item">Devices we repair</li>
+              <li class="tabs__item">Service prices</li>
+              <li class="tabs__item">Addresses of service centers</li>
+              <li class="tabs__item">Special prices</li>
+            </ul>
+          </nav>
+
+          <!-- CONTENT -->
+          <div class="services__content">
+            <div class="services__info">
+              <p class="services__text">
+                We are an authorised service centre for Dell equipment repairs.
+                Only with us can you repair your Dell laptop with the official
+                manufacturer's warranty.
+              </p>
+              <p class="services__text">
+                We have been successfully operating since 1992 and have earned a
+                reputation as a reliable partner.
+              </p>
+
+              <button class="services__link" type="button">
+                <span class="services__link-icon"></span>
+                <span class="services__link-text">Read more</span>
+              </button>
+            </div>
+
+            <div class="services__image-wrapper">
+              <img
+                class="services__image"
+                src="img/cps image.png"
+                alt="CPS service centre sign"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

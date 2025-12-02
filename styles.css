@@ -1,0 +1,380 @@
+:root {
+  /* Outside background (around the phone/card) */
+  --page-bg: #ecf1ff;
+
+  /* Header + cards */
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+
+  /* Grey panel for main content area */
+  --content-bg: #f5f6f8;
+
+  --accent-blue: #41b6e6; /* vertical bar beside title */
+  --mint: #b8ffec;        /* active tab + arrow */
+
+  --pink-main: #ff3e79;   /* icons + buttons */
+  --text-main: #1f1f1f;
+  --text-muted: #7e7e82;
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background-color: var(--page-bg);
+  color: var(--text-main);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* PAGE WRAPPER */
+
+.page {
+  min-height: 100vh;
+}
+
+.page--theme--light {
+  background-color: var(--page-bg);
+}
+
+/* ====== MAIN CONTAINER ====== */
+/* Mobile: phone-like card */
+.page__main-container {
+  max-width: 360px;
+  margin: 32px auto;
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+/* Tablet/desktop: stretch and use full width, with bigger content */
+@media (min-width: 768px) {
+  .page__main-container {
+    max-width: 1120px;
+    margin: 32px auto;
+    border-radius: 24px;
+  }
+}
+
+/* ========== HEADER ========== */
+
+.header {
+  background-color: var(--header-bg);
+  padding: 14px 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__group-divider {
+  width: 2px;
+  height: 32px;
+  background-color: #eaeaea;
+  border-radius: 1px;
+}
+
+.header__logo {
+  height: 28px;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__actions-divider {
+  width: 2px;
+  height: 32px;
+  background-color: #eaeaea;
+  border-radius: 1px;
+  display: none; /* shown on tablet+ */
+}
+
+.header__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  padding: 0;
+  background-color: var(--pink-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__icon img {
+  width: 22px;
+  height: 22px;
+}
+
+/* MOBILE HEADER ICONS – only burger + last 2 */
+
+@media (max-width: 767px) {
+  .header__icon--type--call,
+  .header__icon--type--chat,
+  .header__icon--type--profile {
+    display: none;
+  }
+}
+
+/* On tablet+ show all icons & divider */
+@media (min-width: 768px) {
+  .header {
+    padding: 16px 24px 20px;
+  }
+
+  .header__actions-divider {
+    display: block;
+  }
+}
+
+/* ========== MAIN / SERVICES BLOCK ========== */
+
+/* Grey panel under the white header */
+.services {
+  background-color: var(--content-bg);
+  padding: 0 16px 24px;
+  margin-top: 0;
+}
+
+/* Card wrapper – same grey so it blends in on mobile */
+.services__card {
+  padding-top: 24px;
+  background-color: var(--content-bg);
+  border: none;
+  box-shadow: none;
+}
+
+/* On tablet/desktop, make inner white card on grey */
+@media (min-width: 768px) {
+  .services {
+    padding: 0 24px 32px;
+  }
+
+  .services__card {
+    background-color: var(--card-bg);
+    padding: 24px 40px 40px;
+    border-radius: 16px;
+    border: 1px solid #f0f0f0;
+  }
+}
+
+/* Header row inside content */
+
+.services__header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.services__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.services__accent-bar {
+  width: 4px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: var(--accent-blue);
+}
+
+.services__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* request / status buttons – hidden on mobile */
+
+.services__actions {
+  display: none;
+  margin-left: auto;
+  gap: 16px;
+}
+
+.services__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.services__action--type--submit-request {
+  background-color: var(--pink-main);
+  color: #ffffff;
+}
+
+.services__action--type--check-status {
+  background-color: transparent;
+  color: var(--pink-main);
+  border: 1px solid var(--pink-main);
+}
+
+/* Show buttons on tablet+ */
+@media (min-width: 768px) {
+  .services__title {
+    font-size: 32px;
+  }
+
+  .services__actions {
+    display: flex;
+  }
+}
+
+/* ========== TABS ========== */
+
+.tabs {
+  margin-bottom: 24px;
+}
+
+.tabs__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.tabs__item {
+  flex-shrink: 0;
+  font-size: 15px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tabs__item--state--active {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--mint);
+  background-color: #ffffff;
+  color: var(--text-main);
+}
+
+@media (min-width: 768px) {
+  .tabs__list {
+    overflow-x: visible;
+  }
+}
+
+/* ========== CONTENT ========== */
+
+.services__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.services__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.services__text {
+  margin: 0;
+}
+
+.services__link {
+  align-self: flex-start;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.services__link-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services__link-icon::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--mint);
+  border-bottom: 2px solid var(--mint);
+  transform: rotate(-45deg); /* right arrow */
+}
+
+.services__image-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.services__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Tablet/desktop: text and image side-by-side */
+@media (min-width: 768px) {
+  .services__content {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .services__info,
+  .services__image-wrapper {
+    flex: 1 1 50%;
+  }
+}
+
+/* DESKTOP – slightly larger card */
+@media (min-width: 1024px) {
+  .page__main-container {
+    max-width: 1200px;
+  }
+
+  .services__card {
+    padding: 24px 60px 56px;
+  }
+}
